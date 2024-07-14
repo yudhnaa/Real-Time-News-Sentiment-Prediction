@@ -1,16 +1,17 @@
-from pyspark.ml import PipelineModel
-import re
+#import re
+#from nltk.corpus import stopwords
+#from nltk.tokenize import word_tokenize
+#from pyspark.sql.functions import col
+#from pyspark.ml import PipelineModel
+#from sklearn.base import BaseEstimator
+
 import pickle
 import nltk
-# from nltk.corpus import stopwords
-# from nltk.tokenize import word_tokenize
 from kafka import KafkaConsumer
 from json import loads
 from pymongo import MongoClient
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col
-from pyspark.ml import PipelineModel
-from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.base import TransformerMixin
 import spacy
 import numpy as np
 from spacy.lang.en.stop_words import STOP_WORDS
@@ -52,8 +53,8 @@ def spacy_tokenizer(sentence):
     return final_tokens
 
 # Load the model
-headline_model = pickle.load(open("headline_prediction_model.pkl", 'rb'))
-title_model = pickle.load(open("title_prediction_model.pkl", 'rb'))
+headline_model = pickle.load(open("Kafka-pyspark/headline_prediction_model.pkl", 'rb'))
+title_model = pickle.load(open("Kafka-pyspark/title_prediction_model.pkl", 'rb'))
 
 # Establish connection to MongoDB
 client = MongoClient('localhost', 27017)

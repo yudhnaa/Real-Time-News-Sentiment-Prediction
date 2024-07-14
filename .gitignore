@@ -25,4 +25,6 @@ Thumbs.db
 # Remove previous ipynb_checkpoints
 #   git rm -r .ipynb_checkpoints/
 *.pkl
+.conda
+.venv
 # End of https://www.toptal.com/developers/gitignore/api/jupyternotebooks
