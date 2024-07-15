@@ -1,4 +1,4 @@
-# Real Time News Prediction
+# Real Time News Sentiment Prediction
 A machine learning model and Realtime analysis
 
 # Machine Learning Model
