@@ -7,7 +7,7 @@ producer = KafkaProducer(bootstrap_servers=['localhost:9092'],
                          value_serializer=lambda x:
                          json.dumps(x).encode('utf-8'))
 
-with open('test_file.csv') as file_obj:
+with open('kafka/test_file.csv') as file_obj:
     reader_obj = csv.reader(file_obj)
     for data in reader_obj:
         print(data)

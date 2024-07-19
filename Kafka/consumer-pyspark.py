@@ -53,8 +53,8 @@ def spacy_tokenizer(sentence):
     return final_tokens
 
 # Load the model
-headline_model = pickle.load(open("Kafka-pyspark/headline_prediction_model.pkl", 'rb'))
-title_model = pickle.load(open("Kafka-pyspark/title_prediction_model.pkl", 'rb'))
+headline_model = pickle.load(open("Kafka/headline_prediction_model.pkl", 'rb'))
+title_model = pickle.load(open("Kafka/title_prediction_model.pkl", 'rb'))
 
 # Establish connection to MongoDB
 client = MongoClient('localhost', 27017)
@@ -76,7 +76,7 @@ consumer = KafkaConsumer(
     value_deserializer=lambda x: loads(x.decode('utf-8')))
 
 for message in consumer:
-    print(message)
+    #print(message)
     title = message.value['Title']
     headline = message.value['Headline']
 
